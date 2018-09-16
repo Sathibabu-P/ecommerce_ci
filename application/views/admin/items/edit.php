@@ -66,23 +66,24 @@ Product Edit
 					
 					<li>
 						<a href="#tab_images" data-toggle="tab">
-						Images </a>
+						Images</a>
 					</li>
 					
 				</ul>
+				 <?php echo validation_errors('<div class="alert alert-dismissible alert-danger"><button type="button" class="close" data-dismiss="alert">×</button>', '</div>'); ?>
 				<div class="tab-content no-space">
 					<div class="tab-pane active" id="tab_general">
 					<div class="form-body">
-					 <?php echo validation_errors('<div class="alert alert-dismissible alert-danger"><button type="button" class="close" data-dismiss="alert">×</button>', '</div>'); ?>
+					
 						  <?php $attributes = array('class' => 'form-horizontal form-row-seperated','id' => 'items-form'); echo form_open('index.php/admin/items/edit',$attributes);?>
-					  <div class="alert alert-danger display-hide">
-						<button class="close" data-close="alert"></button>
-						You have some form errors. Please check below.
-					</div>
-					<div class="alert alert-success display-hide">
-						<button class="close" data-close="allert"></button>
-						Successfuly saved..
-					</div>
+							  <div class="alert alert-danger display-hide">
+								<button class="close" data-close="alert"></button>
+								You have some form errors. Please check below.
+							</div>
+							<div class="alert alert-success display-hide">
+								<button class="close" data-close="allert"></button>
+								Successfuly saved..
+							</div>
 
 							<div class="form-group">
 								<label class="col-md-2 control-label">Name: <span class="required">
@@ -160,52 +161,7 @@ Product Edit
 						<?php echo form_close();?>
 					</div>
 					<div class="tab-pane" id="tab_images">
-						
-						<div id="tab_images_uploader_container" class="text-align-reverse margin-bottom-10">
-							<a id="tab_images_uploader_pickfiles" href="javascript:;" class="btn yellow">
-							<i class="fa fa-plus"></i> Select Files </a>
-							
-						</div>
-						<div class="row">
-							<div id="tab_images_uploader_filelist" class="col-md-6 col-sm-12">
-							</div>
-						</div>
-						<table class="table table-bordered table-hover">
-						<thead>
-						<tr role="row" class="heading">
-							<th width="8%">
-								 Image
-							</th>
-							<th width="10%">
-								 Banner Image
-							</th>
-							<th width="10%">
-							</th>
-						</tr>
-						</thead>
-						<tbody>
-						<tr>
-							<td>
-								<a href="<?=base_url();?>assets/admin/pages/media/works/img1.jpg" class="fancybox-button" data-rel="fancybox-button">
-								<img class="img-responsive" src="<?=base_url();?>assets/admin/pages/media/works/img1.jpg" alt="">
-								</a>
-							</td>
-							
-							<td>
-								<label>
-								<input type="radio" name="product[images][1][image_type]" value="1">
-								</label>
-							</td>
-				
-							<td>
-								<a href="javascript:;" class="btn red btn-sm">
-								<i class="fa fa-trash"></i> Remove </a>
-							</td>
-						</tr>
-					
-						
-						</tbody>
-						</table>
+						<?php include('images.php'); ?>
 					</div>
 				</div>
 			</div>
@@ -217,3 +173,4 @@ Product Edit
 <!-- END PAGE CONTENT-->
 </div>
 </div>
+

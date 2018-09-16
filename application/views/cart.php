@@ -16,15 +16,16 @@
 
                     <div class="box">
 
-                        <form method="post" action="checkout1.html">
+                        <form method="post" name="cart" action="<?=base_url()?>index.php/cart/update">
 
                             <h1>Shopping cart</h1>
-                            <p class="text-muted">You currently have 3 item(s) in your cart.</p>
+                            <p class="text-muted">You currently have <?=count($cart);?> item(s) in your cart.</p>
+                            <?php if(count($cart)> 0) {?>
                             <div class="table-responsive">
                                 <table class="table">
                                     <thead>
                                         <tr>
-                                            <th colspan="2">Product</th>
+                                            <th >Product</th>
                                             <th>Quantity</th>
                                             <th>Unit price</th>
                                             <th>Discount</th>
@@ -32,45 +33,26 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <tr>
-                                            <td>
-                                                <a href="#">
-                                                    <img src="img/detailsquare.jpg" alt="White Blouse Armani">
-                                                </a>
-                                            </td>
-                                            <td><a href="#">White Blouse Armani</a>
+                                    <?php foreach($cart as $item) : ?>
+                                        <tr>                                         
+                                            <td><a href="#"><?=$item['name']?></a>
                                             </td>
                                             <td>
-                                                <input type="number" value="2" class="form-control">
+                                                <input name="quantity[]" type="number" value="<?=$item['qty']?>" class="form-control" min="1" max="10">
                                             </td>
-                                            <td>$123.00</td>
+                                            <td><?=$this->cart->format_number($item['price'])?></td>
                                             <td>$0.00</td>
-                                            <td>$246.00</td>
-                                            <td><a href="#"><i class="fa fa-trash-o"></i></a>
+                                            <td><?=$this->cart->format_number($item['subtotal'])?></td>
+                                            <td><a onclick="return confirm('Are your sure reomve item?');" href="<?=base_url()?>index.php/cart/remove/<?=$item["rowid"]?>"><i class="fa fa-trash-o"></i></a>
                                             </td>
+                                            <input type="hidden" name="id[]" value="<?=$item["rowid"]?>">
                                         </tr>
-                                        <tr>
-                                            <td>
-                                                <a href="#">
-                                                    <img src="img/basketsquare.jpg" alt="Black Blouse Armani">
-                                                </a>
-                                            </td>
-                                            <td><a href="#">Black Blouse Armani</a>
-                                            </td>
-                                            <td>
-                                                <input type="number" value="1" class="form-control">
-                                            </td>
-                                            <td>$200.00</td>
-                                            <td>$0.00</td>
-                                            <td>$200.00</td>
-                                            <td><a href="#"><i class="fa fa-trash-o"></i></a>
-                                            </td>
-                                        </tr>
+                                      <?php endforeach;?> 
                                     </tbody>
                                     <tfoot>
                                         <tr>
-                                            <th colspan="5">Total</th>
-                                            <th colspan="2">$446.00</th>
+                                            <th colspan="4">Total</th>
+                                            <th colspan="2">Rs. <?php echo $this->cart->format_number($this->cart->total()); ?>/-</th>
                                         </tr>
                                     </tfoot>
                                 </table>
@@ -83,13 +65,20 @@
                                     <a href="category.html" class="btn btn-default"><i class="fa fa-chevron-left"></i> Continue shopping</a>
                                 </div>
                                 <div class="pull-right">
-                                    <button class="btn btn-default"><i class="fa fa-refresh"></i> Update basket</button>
+                                    <button type="submit" class="btn btn-info"><i class="fa fa-refresh"></i> Update basket</button>
                                     <button type="submit" class="btn btn-primary">Proceed to checkout <i class="fa fa-chevron-right"></i>
                                     </button>
                                 </div>
                             </div>
-
-                        </form>
+                             </form>
+                            <?php } else { ?>
+                             <div class="box-footer">
+                                <div class="pull-left">
+                                    <a href="/jlr" class="btn btn-primary"><i class="fa fa-chevron-left"></i> Continue shopping</a>
+                                </div>
+                            </div>
+                            <?php }  ?>
+                       
 
                     </div>
                     <!-- /.box -->
@@ -102,6 +91,7 @@
                 <!-- /.col-md-9 -->
 
                 <div class="col-md-3">
+                <?php if(count($cart)> 0) {?>
                     <div class="box" id="order-summary">
                         <div class="box-header">
                             <h3>Order summary</h3>
@@ -113,11 +103,11 @@
                                 <tbody>
                                     <tr>
                                         <td>Order subtotal</td>
-                                        <th>$446.00</th>
+                                        <th>Rs. <?php echo $this->cart->format_number($this->cart->total()); ?>/-</th>
                                     </tr>
                                     <tr>
                                         <td>Shipping and handling</td>
-                                        <th>$10.00</th>
+                                        <th>$0.00</th>
                                     </tr>
                                     <tr>
                                         <td>Tax</td>
@@ -125,7 +115,7 @@
                                     </tr>
                                     <tr class="total">
                                         <td>Total</td>
-                                        <th>$456.00</th>
+                                        <th>Rs. <?php echo $this->cart->format_number($this->cart->total()); ?>/-</th>
                                     </tr>
                                 </tbody>
                             </table>
@@ -133,8 +123,7 @@
 
                     </div>
 
-
-              
+                 <?php } ?>              
 
                 </div>
                 <!-- /.col-md-3 -->

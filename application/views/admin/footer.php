@@ -17,7 +17,7 @@
 <script src="<?=base_url()?>assets/admin/global/plugins/respond.min.js"></script>
 <script src="<?=base_url()?>assets/admin/global/plugins/excanvas.min.js"></script> 
 <![endif]-->
-<script src="<?=base_url()?>assets/admin/global/plugins/jquery.min.js" type="text/javascript"></script>
+
 <script src="<?=base_url()?>assets/admin/global/plugins/jquery-migrate.min.js" type="text/javascript"></script>
 <!-- IMPORTANT! Load jquery-ui.min.js before bootstrap.min.js to fix bootstrap tooltip conflict with jquery ui tooltip -->
 <script src="<?=base_url()?>assets/admin/global/plugins/jquery-ui/jquery-ui.min.js" type="text/javascript"></script>

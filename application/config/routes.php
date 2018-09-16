@@ -9,11 +9,20 @@ $route['admins/items/create'] = 'admin/items/create';
 $route['admins/items/edit'] = 'admin/items/edit';
 $route['admins/items/edit/(:any)'] = 'admin/items/edit';
 $route['admins/items/delete/(:any)'] = 'admin/items/delete';
+$route['admins/items/delimage/(:any)'] = 'admin/items/delimage';
+$route['admins/items/baseimage'] = 'admin/items/baseimage';
+
+
+$route['cart/add'] = 'cart/add';
+$route['cart/remove/(:any)'] = 'cart/remove';
+$route['cart/update'] = 'cart/update';
+$route['cart/clear'] = 'cart/clear';
+
 
 $route['shop'] = 'home/shop';
 $route['cart'] = 'home/cart';
 $route['checkout'] = 'home/checkout';
-$route['view'] = 'home/view';
+$route['view/(:any)'] = 'home/view';
 
 
 $route['default_controller'] = 'home';

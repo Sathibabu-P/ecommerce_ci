@@ -174,6 +174,7 @@
     <script src="<?=base_url();?>assets/js/bootstrap-hover-dropdown.js"></script>
     <script src="<?=base_url();?>assets/js/owl.carousel.min.js"></script>
     <script src="<?=base_url();?>assets/js/front.js"></script>
+    <script src="<?=base_url();?>assets/js/cart.js"></script>
 
 
 </body>

@@ -40,7 +40,7 @@
 						<a href="#">Products</a>
 					</li>
 				</ul>
-				
+				<a class="btn green pull-right" href="<?php echo base_url(); ?>index.php/admins/items/create"><i class="fa fa-plus"></i> New Product</a>
 			</div>
 			<!-- END PAGE HEADER-->
 			<!-- BEGIN PAGE CONTENT-->

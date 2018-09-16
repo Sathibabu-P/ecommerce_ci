@@ -30,20 +30,7 @@ $config = array(
                     'rules' => 'required|xss_clean'            
                 )
         ),
-        'area' => array(
-		array(
-
-			'field' => 'name',
-			'label' => 'Area Name',
-			'rules' => 'required|callback_isunique|min_length[4]|xss_clean'
-		),
-		array(
-
-			'field' => 'city_id',
-			'label' => 'City Name',
-			'rules' => 'required|xss_clean'
-		)
-        ),
+        
         'property_type' => array(
                 array(
                         'field' => 'name',
