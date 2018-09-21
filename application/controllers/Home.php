@@ -44,10 +44,15 @@ class Home extends CI_Controller {
 	}
 
 	public function checkout()
-	{
-		$this->load->view('header');
-		$this->load->view('checkout');
-		$this->load->view('footer');
+	{	
+		if(count($this->cart->contents()) < 1) {
+			 redirect('index.php/cart');
+		}else{
+			$data['cart'] = $this->cart->contents();
+			$this->load->view('header');
+			$this->load->view('checkout',$data);
+			$this->load->view('footer');
+		}
 	}
 
 	

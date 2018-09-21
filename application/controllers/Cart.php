@@ -30,18 +30,16 @@ class Cart extends CI_Controller {
 	public function update()
 	{
 		
-		$quantity = array();
-		 foreach ($this->input->post('quantity') as $value){
-		 	array_push($quantity,$value);
-    	}
-    	$i = 0;
-    	foreach ($this->input->post('id') as $value){
-			 $this->cart->update(array(
-            	'rowid'      =>     $value,
-	            'qty'        =>     $quantity[$i],
+		// echo '<pre>',print_r($_POST['cart'],1),'</pre>';
+		// die();
+		$cart_info = $_POST['cart'];
+		foreach($cart_info as $id => $cart)
+		{	
+			$this->cart->update(array(
+            	'rowid'      =>     $cart['rowid'],
+	            'qty'        =>     $cart['qty'],
 	        ));
-			 $i++;
-    	}
+		}			
     	redirect('index.php/cart');
 	}
 

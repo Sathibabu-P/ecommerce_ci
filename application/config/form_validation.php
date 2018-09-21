@@ -31,119 +31,53 @@ $config = array(
                 )
         ),
         
-        'property_type' => array(
+        'order' => array(
                 array(
-                        'field' => 'name',
-                        'label' => 'Property Name',
-                        'rules' => 'required|callback_isunique|min_length[4]|xss_clean'
-                )
+                        'field' => 'firstname',
+                        'label' => 'First Name',
+                        'rules' => 'required|xss_clean'
+                ),
+                array(
+                        'field' => 'lastname',
+                        'label' => 'Last Name',
+                        'rules' => 'required|xss_clean'
+                ),
+                array(
+                        'field' => 'email',
+                        'label' => 'Email',
+                        'rules' => 'required|xss_clean'
+                ),
+                array(
+                        'field' => 'phoneno',
+                        'label' => 'Phone Number',
+                        'rules' => 'required|xss_clean'
+                ),
+                array(
+                        'field' => 'address',
+                        'label' => 'Address',
+                        'rules' => 'required|xss_clean'
+                ),
+                array(
+                        'field' => 'city',
+                        'label' => 'City',
+                        'rules' => 'required|xss_clean'
+                ),
+                array(
+                        'field' => 'state',
+                        'label' => 'State',
+                        'rules' => 'required|xss_clean'
+                ),
+                array(
+                        'field' => 'zipcode',
+                        'label' => 'Zipcode',
+                        'rules' => 'required|xss_clean'
+                ),
         ),
         'amenity' => array(
                 array(
                         'field' => 'name',
                         'label' => 'Amenity Name',
                         'rules' => 'required|callback_isunique|min_length[2]'
-                )
-        ),
-        'property' => array(
-                array(
-                        'field' => 'title',
-                        'label' => 'Title',
-                        'rules' => 'trim|required|min_length[10]|max_length[200]|xss_clean'
-                ),
-                array(
-                        'field' => 'description',
-                        'label' => 'Description',
-                        'rules' => 'trim|required|min_length[20]|xss_clean'
-                ),               
-                array(
-                        'field' => 'city_id',
-                        'label' => 'City',
-                        'rules' => 'trim|numeric|required|xss_clean'
-                ),
-                array(
-                        'field' => 'area_id',
-                        'label' => 'Area',
-                        'rules' => 'trim|numeric|required|xss_clean'
-                ),
-                array(
-                        'field' => 'monthly_rent',
-                        'label' => 'Monthly Rent',
-                        'rules' => 'trim|numeric|required|xss_clean'
-                ),
-                array(
-                        'field' => 'total_rooms',
-                        'label' => 'Total Rooms',
-                        'rules' => 'trim|numeric|required|xss_clean'
-                ),
-                array(
-                        'field' => 'fixed_deposit',
-                        'label' => 'Fixed Deposit',
-                        'rules' => 'trim|numeric|required|xss_clean'
-                ),
-                array(
-                        'field' => 'latitude',
-                        'label' => 'Latitude',
-                        'rules' => 'trim|numeric|required|xss_clean'
-                ),
-                array(
-                        'field' => 'longitude',
-                        'label' => 'Longitude',
-                        'rules' => 'trim|numeric|required|xss_clean'
-                ),
-                array(
-                        'field' => 'minimum_stay',
-                        'label' => 'Minimum Stay',
-                        'rules' => 'trim|numeric|required|xss_clean'
-                ),
-                array(
-                        'field' => 'current_roommates',
-                        'label' => 'Current Roommates',
-                        'rules' => 'trim|numeric|required|xss_clean'
-                ),
-                 array(
-                        'field' => 'preferred_age_from',
-                        'label' => 'Preferred Age From',
-                        'rules' => 'trim|numeric|required|xss_clean'
-                ),
-                array(
-                        'field' => 'preferred_age_to',
-                        'label' => 'Preferred Age To',
-                        'rules' => 'trim|numeric|required|xss_clean'
-                )
-        ),
-        'enquiry' => array(              
-                array(
-                        'field' => 'email',
-                        'label' => 'Email',
-                        'rules' => 'required|valid_email|xss_clean'
-                ),
-                array(
-                        'field' => 'name',
-                        'label' => 'Name',
-                        'rules' => 'required|min_length[2]|xss_clean'
-                ), 
-                array(
-                        'field' => 'message',
-                        'label' => 'Message',
-                        'rules' => 'required|min_length[5]|xss_clean'
-                )
-        ),
-        'review' => array(              
-                array(
-                        'field' => 'email',
-                        'label' => 'Email',
-                        'rules' => 'required|valid_email|callback_unique_review|xss_clean'
-                ),
-                array(
-                        'field' => 'name',
-                        'label' => 'Name',
-                        'rules' => 'required|min_length[2]|xss_clean'
-                ), 
-                array(
-                        'field' => 'review',
-                        'label' => 'Review',
-                        'rules' => 'required|min_length[5]|xss_clean'
                 )
         )
 );

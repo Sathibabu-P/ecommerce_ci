@@ -18,6 +18,8 @@ $route['cart/remove/(:any)'] = 'cart/remove';
 $route['cart/update'] = 'cart/update';
 $route['cart/clear'] = 'cart/clear';
 
+$route['checkout/order'] = 'checkout/order';
+
 
 $route['shop'] = 'home/shop';
 $route['cart'] = 'home/cart';

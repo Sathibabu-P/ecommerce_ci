@@ -1,1 +1,10 @@
 /** Your theme modifications here **/
+.error.help-block{
+	 color: #f30606;;
+}
+.form-control.error{
+	border: 1px solid #e11f4f;
+}
+.form-control.error{
+	border: 1px solid #e11f4f;
+}

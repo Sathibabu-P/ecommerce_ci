@@ -33,7 +33,8 @@ class DB extends CI_Model {
     }
     
     public function create($tableName,$data){
-        $data['created_at'] =  date("Y-m-d H:i:s");      
+        $data['created_at'] =  date("Y-m-d H:i:s");
+        $data['updated_at'] =  date("Y-m-d H:i:s");      
     	if ($this->db->insert($tableName, $data)) {        	
         	// $query = $this->db->get_where($tableName,array('id' => $this->db->insert_id()));
             // return $query->row_array();

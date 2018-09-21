@@ -38,14 +38,14 @@
                                             <td><a href="#"><?=$item['name']?></a>
                                             </td>
                                             <td>
-                                                <input name="quantity[]" type="number" value="<?=$item['qty']?>" class="form-control" min="1" max="10">
+                                                <input name="cart[<?=$item["rowid"]?>][qty]" type="number" value="<?=$item['qty']?>" class="form-control" min="1" max="10">
                                             </td>
                                             <td><?=$this->cart->format_number($item['price'])?></td>
                                             <td>$0.00</td>
                                             <td><?=$this->cart->format_number($item['subtotal'])?></td>
                                             <td><a onclick="return confirm('Are your sure reomve item?');" href="<?=base_url()?>index.php/cart/remove/<?=$item["rowid"]?>"><i class="fa fa-trash-o"></i></a>
                                             </td>
-                                            <input type="hidden" name="id[]" value="<?=$item["rowid"]?>">
+                                            <input type="hidden" name="cart[<?=$item["rowid"]?>][rowid]" value="<?=$item["rowid"]?>">
                                         </tr>
                                       <?php endforeach;?> 
                                     </tbody>
