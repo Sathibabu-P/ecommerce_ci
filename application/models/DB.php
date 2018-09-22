@@ -90,6 +90,42 @@ class DB extends CI_Model {
         return FALSE;
     }  
 
+    public function getOrder($id)
+    {   
+        $this->db->where('id =',$id);
+        $query = $this->db->get('orders');
+        if ($query->num_rows() == 1) {
+            $order = $query->row_array();
+            $order['customer'] = $this->find_by_id('customers',$order['customer_id']);
+            $order['items'] = $this->orderItems($order['id']);
+            return $order;
+        }
+        return NULL;
+
+        // $this->db->select('orders.*,customers.*,order_items.*,items.*');
+        // $this->db->from('orders');
+        // $this->db->join('customers', 'customers.id = orders.customer_id');
+        // $this->db->join('order_items', 'order_items.order_id  = orders.id');
+        // $this->db->join('items', 'order_items.items_id  = items.id');
+        // $this->db->where('order.id', $id);
+        // $query = $this->db->get();       
+        //  if ($query->num_rows() > 0) return $query->result_array();
+        // return NULL;
+    }
+
+    public function orderItems($id)
+    {
+       $this->db->select('order_items.*,items.*');
+       $this->db->from('order_items');
+       $this->db->join('items', 'order_items.item_id   = items.id');
+       $this->db->where('order_items.order_id', $id);
+       $query = $this->db->get();       
+       if ($query->num_rows() > 0) return $query->result_array();
+        return NULL;
+    }
+    
+
+    
     public function isunique($tableName,$name){
     	$this->db->where('name =',$name);  
         $id =$this->input->post('id');     

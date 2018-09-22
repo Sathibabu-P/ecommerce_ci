@@ -23,6 +23,7 @@ class Checkout extends CI_Controller {
         	$customer = $this->customer_data();
         	if($customer_id = $this->DB->create('customers',$customer)){
         		$order['customer_id'] = $customer_id;
+                $order['order_total'] = $this->cart->total();
         		if($order_id = $this->DB->create('orders',$order)){
         			$cart = $this->cart->contents();
         			foreach($cart as $item) {
@@ -36,7 +37,20 @@ class Checkout extends CI_Controller {
         			$this->cart->destroy();
         		}	
         	}
+        	$data['order'] = $this->DB->getOrder($order_id);
+			$this->load->view('header');
+			$this->load->view('sucess',$data);
+			$this->load->view('footer');
         }
+    }
+
+
+    public function success($value='')
+    {   
+        $data['order'] = $this->DB->getOrder(3);       
+        $this->load->view('header');
+        $this->load->view('success',$data);
+        $this->load->view('footer');
     }
 
     private function customer_data(){

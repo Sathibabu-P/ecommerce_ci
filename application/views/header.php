@@ -85,12 +85,16 @@
             <div class="navbar-collapse collapse" id="navigation">
 
                 <ul class="nav navbar-nav navbar-left">
-                    <li class="active"><a href="index.html">Home</a>
-                    </li>
-                    <li class="dropdown yamm-fw">
+                    <li class="active"><a href="index.html">Home</a></li>
+                    <li class=""><a href="index.html">Categories</a></li>
+                    <li class=""><a href="index.html">Shop</a></li>
+                    <li class=""><a href="index.html">Contact Us</a></li>
+                    <li class=""><a href="index.html">About Us</a></li>
+                    <li class=""><a href="index.html">Faq</a></li>
+                   <!--  <li class="dropdown yamm-fw">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="200">Men <b class="caret"></b></a>
                        
-                    </li>
+                    </li> -->
 
                   
                 </ul>

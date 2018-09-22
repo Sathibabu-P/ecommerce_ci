@@ -19,6 +19,7 @@ $route['cart/update'] = 'cart/update';
 $route['cart/clear'] = 'cart/clear';
 
 $route['checkout/order'] = 'checkout/order';
+$route['checkout/success'] = 'checkout/success';
 
 
 $route['shop'] = 'home/shop';
