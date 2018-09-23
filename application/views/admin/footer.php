@@ -50,6 +50,7 @@
 <script src="<?=base_url()?>assets/admin/global/scripts/datatable.js"></script>
 <script src="<?=base_url()?>assets/admin/pages/scripts/table-advanced.js"></script>
 <script src="<?=base_url()?>assets/admin/pages/scripts/form-validation.js"></script>
+<script src="<?=base_url()?>assets/admin/js/orders.js"></script>
 <!-- END PAGE LEVEL SCRIPTS -->
 <script>
         jQuery(document).ready(function() {    

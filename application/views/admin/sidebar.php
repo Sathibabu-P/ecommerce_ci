@@ -26,6 +26,11 @@
 							<a href="<?=base_url()?>index.php/admin/orders">
 							<i class="icon-basket"></i>
 							Orders</a>
+						</li>
+						<li>
+							<a href="<?=base_url()?>index.php/admin/categories">
+							<i class="icon-list"></i>
+							Categories</a>
 						</li>						
 						<li>
 							<a href="<?=base_url()?>index.php/admin/items">

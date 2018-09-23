@@ -40,7 +40,7 @@
 						<a href="#">Products</a>
 					</li>
 				</ul>
-				<a class="btn green pull-right" href="<?php echo base_url(); ?>index.php/admins/items/create"><i class="fa fa-plus"></i> New Product</a>
+				<a class="btn green pull-right" href="<?php echo base_url(); ?>index.php/admin/items/create"><i class="fa fa-plus"></i> New Product</a>
 			</div>
 			<!-- END PAGE HEADER-->
 			<!-- BEGIN PAGE CONTENT-->
@@ -93,7 +93,7 @@
 						                            
 						            <td class="min-width nowrap">
 
-<a href="<?=base_url();?>index.php/admins/items/edit/<?=$item['id']?>" class="btn btn-sm blue"><i class="fa fa-edit"></i>Edit</a> <a href="<?=base_url();?>index.php/admins/items/delete/<?=$item['id']?>" class="btn btn-sm red" onclick="return confirm('Are your sure delete?');"><i class="fa fa-trash"></i>Delete</a></td>
+<a href="<?=base_url();?>index.php/admin/items/edit/<?=$item['id']?>" class="btn btn-sm blue"><i class="fa fa-edit"></i>Edit</a> <a href="<?=base_url();?>index.php/admin/items/delete/<?=$item['id']?>" class="btn btn-sm red" onclick="return confirm('Are your sure delete?');"><i class="fa fa-trash"></i>Delete</a></td>
 						          </tr>
 						        <?php endforeach; }?>
 								

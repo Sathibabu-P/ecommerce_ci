@@ -77,6 +77,18 @@ Product Create
 
 					
 					  <?php# echo form_open('');?>
+					  <div class="form-group">
+							<label class="col-md-2 control-label">Category: <span class="required">
+							* </span>
+							</label>
+							<div class="col-md-10">
+								<select class="select2me form-control"  name="category_id">
+									<?php foreach($categories as $category) : ?>
+										<option value="<?=$category['id']?>"><?=$category['name']?></option>
+									<?php endforeach; ?>
+								</select>
+							</div>
+						</div>
 						<div class="form-group">
 							<label class="col-md-2 control-label">Name: <span class="required">
 							* </span>
@@ -147,7 +159,7 @@ Product Create
 						</div>
 					</div>
 
-					<a class="btn default" href="<?php echo base_url(); ?>index.php/admins/items"><i class="fa fa-reply"></i> Back</a>
+					<a class="btn default" href="<?php echo base_url(); ?>index.php/admin/items"><i class="fa fa-reply"></i> Back</a>
 					<button type="submit" name="submit" value="index" class="btn green"><i class="fa fa-check"></i> Save</button>
 					<button type="submit" name="submit" value="edit" class="btn green"><i class="fa fa-check-circle"></i> Save & Continue Edit</button>
 					<?php echo form_close();?>

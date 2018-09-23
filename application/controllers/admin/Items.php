@@ -29,7 +29,8 @@ class Items extends CI_Controller {
 		if ($this->form_validation->run('item') == FALSE)
         {       
 
-            $data['title'] = 'Create item';	
+            $data['title'] = 'Create item';
+            $data['categories'] = $this->DB->all('categories');		
         	$this->load->view('admin/header');
         	$this->load->view('admin/sidebar');
 			$this->load->view('admin/items/create',$data);
@@ -60,6 +61,7 @@ class Items extends CI_Controller {
 		if ($this->form_validation->run('item') == FALSE)
         {
 			$data['title'] = 'Edit item';
+			$data['categories'] = $this->DB->all('categories');
 			$data['item'] = $this->DB->find_by_id($this->tableName,$id);
 			$data['item_images'] = $this->DB->item_images($id);
 			$data['tab'] = 'general';			
@@ -175,6 +177,7 @@ class Items extends CI_Controller {
 	}
 
 	private function item_data(){
+		$data['category_id'] = $this->input->post('category_id');
 		$data['name'] = $this->input->post('name');
     	$data['description'] = $this->input->post('description');
     	$data['actual_price'] = $this->input->post('actual_price');

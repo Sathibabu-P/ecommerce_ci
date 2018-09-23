@@ -73,11 +73,16 @@ $config = array(
                         'rules' => 'required|xss_clean'
                 ),
         ),
-        'amenity' => array(
+        'category' => array(
                 array(
                         'field' => 'name',
-                        'label' => 'Amenity Name',
+                        'label' => 'Category Name',
                         'rules' => 'required|callback_isunique|min_length[2]'
-                )
+                ),
+                array(
+                        'field' => 'status',
+                        'label' => 'Status',
+                        'rules' => 'required|xss_clean'
+                ),
         )
 );

@@ -90,6 +90,16 @@ class DB extends CI_Model {
         return FALSE;
     }  
 
+    public function getOrderswithCustomer()
+    {
+        $this->db->select('orders.*,customers.firstname as fname,customers.lastname as lname');
+        $this->db->from('orders');
+        $this->db->join('customers', 'customers.id = orders.customer_id');
+        $query = $this->db->get();       
+        if ($query->num_rows() > 0) return $query->result_array();
+        return NULL;
+    }
+
     public function getOrder($id)
     {   
         $this->db->where('id =',$id);

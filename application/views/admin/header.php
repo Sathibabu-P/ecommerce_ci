@@ -18,6 +18,7 @@
 <link href="<?=base_url();?>assets/admin/global/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
 <link href="<?=base_url();?>assets/admin/global/plugins/uniform/css/uniform.default.css" rel="stylesheet" type="text/css"/>
 <link href="<?=base_url();?>assets/admin/global/plugins/bootstrap-switch/css/bootstrap-switch.min.css" rel="stylesheet" type="text/css"/>
+
 <!-- END GLOBAL MANDATORY STYLES -->
 <!-- BEGIN THEME STYLES -->
 <link href="<?=base_url();?>assets/admin/global/css/components.css" id="style_components" rel="stylesheet" type="text/css"/>
