@@ -63,7 +63,15 @@
        
                   <table class="table table-striped table-bordered table-hover" id="order-datatable">
                     
-                   
+                    <thead>
+                           <th>S.No</th> 
+                           <th>Reference No</th>
+                           <th>Customer Name</th>
+                           <th>Order Amount</th>
+                           <th>Status</th>
+                           <th>Actions</th>
+                    </thead>  
+
                   </table>
                </div>
             </div>
