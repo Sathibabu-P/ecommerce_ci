@@ -27,8 +27,8 @@ class Orders extends CI_Controller {
 	{
 
 			$columns = array( 
-                0 =>'created_at', 
-                1 =>'ref_number',
+				0 =>'ref_number',
+                1 =>'created_at',                
                 2=> 'customer_id',
                 3=> 'order_total',
                 4=> 'status'
@@ -59,13 +59,16 @@ class Orders extends CI_Controller {
 	        if(!empty($orders))
 	        {	
 	        	$i = 1;
+	        	$alert = "'Are your sure delete?'";
 	            foreach ($orders as $order)
 	            {
 	            	$nestedData['sno'] = $i++;
+	                $nestedData['date'] = $order->created_at;
 	                $nestedData['refno'] = $order->ref_number;
 	                $nestedData['custname'] = $order->fname;
 	                $nestedData['ordamt'] = $order->order_total; 
-	                $nestedData['status'] = $order->status;              
+	                $nestedData['status'] = $order->status; 
+	                $nestedData['actions'] = '<a href="javascript:void(0);" data-href="'.base_url().'index.php/admin/orders/view/'.$order->id.'" class="btn btn-sm blue openBtn" title="order list items"><i class="fa fa-list"></i>View</a> <a href="'.base_url().'index.php/admin/orders/delete/'.$order->id.'" class="btn btn-sm red" onclick="return confirm('.$alert.');"><i class="fa fa-trash"></i>Delete</a>';              
 	                $data[] = $nestedData;
 
 	            }

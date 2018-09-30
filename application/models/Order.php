@@ -43,33 +43,39 @@ class Order extends CI_Model
     }
    
     function orders_search($limit,$start,$search,$col,$dir)
-    {
+    {	
+    	 $this->db->select('orders.*,customers.firstname as fname,customers.lastname as lname');
+        $this->db->from('orders');
+        $this->db->join('customers', 'customers.id = orders.customer_id');
         $query = $this
                 ->db
-                ->like('id',$search)
-                ->or_like('title',$search)
+                ->like('ref_number',$search)
+                ->or_like('customers.firstname',$search)
+                ->or_like('order_total',$search)
+                ->or_like('status',$search)
+                ->or_like('orders.created_at',$search)
                 ->limit($limit,$start)
                 ->order_by($col,$dir)
-                ->get('orders');
+                ->get();
         
        
-        if($query->num_rows()>0)
-        {
-            return $query->result();  
-        }
-        else
-        {
-            return null;
-        }
+        if($query->num_rows()>0) return $query->result();  
+        return null;
     }
 
     function orders_search_count($search)
     {
+         $this->db->select('orders.*,customers.firstname as fname,customers.lastname as lname');
+        $this->db->from('orders');
+        $this->db->join('customers', 'customers.id = orders.customer_id');
         $query = $this
                 ->db
-                ->like('id',$search)
-                ->or_like('title',$search)
-                ->get('orders');
+                ->like('ref_number',$search)
+                ->or_like('customers.firstname',$search)
+                ->or_like('order_total',$search)
+                ->or_like('status',$search)   
+                ->or_like('orders.created_at',$search)                          
+                ->get();
     
         return $query->num_rows();
     } 
